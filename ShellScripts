@@ -1,0 +1,5 @@
+//Find all duplicate file names in a dir
+find /PATH/TO/FILES -type f -printf '%p/ %f\n' | sort -k2 | uniq -f1 --all-repeated=separate
+
+//Demonstrating some of the options you have with this:
+find  /PATH/TO/FILES -type f -printf 'size: %s bytes, modified at: %t, path: %h/, file name: %f\n' | sort -k15 | uniq -f14 --all-repeated=prepend
