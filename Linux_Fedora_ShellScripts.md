@@ -1,23 +1,41 @@
+# File searcing
+
 //Find all duplicate file names in a dir
+```bash
 find /PATH/TO/FILES -type f -printf '%p/ %f\n' | sort -k2 | uniq -f1 --all-repeated=separate
+```
 
 //Demonstrating some of the options you have with this:
+```bash
 find  /PATH/TO/FILES -type f -printf 'size: %s bytes, modified at: %t, path: %h/, file name: %f\n' | sort -k15 | uniq -f14 --all-repeated=prepend
+```
 
 ---
 
-# chi ha installato questo file?
+# Tracing file origin
+
+## Who installed this file?
+```bash
 rpm -q --file /usr/libexec/tracker-miner-fs
+```
 
-# info sul pacchetto
+## Package infos
+```bash
 rpm -qi tracker-miners-2.2.2-1.fc30.x86_64
+```
 
-# trova i vari file collegati
+## Find other related files
+```bash
 rpm -ql tracker-miners
+```
 
-# controlla le dipendenze
+## Check its dependencies
+```bash
 rpm -q --whatrequires tracker-miners
+```
 
-# rimuovi pacchetto
+## Package removal
+```bash
 sudo dnf remove tracker-miners
+```
 
