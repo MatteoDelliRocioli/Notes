@@ -2,7 +2,7 @@
 
 I was following the tutorial on [how to install the Powerline in my Windows Terminal application](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup#customize-your-powershell-prompt) when I stumbled upon an error that told me I couldn't run the script the tutorial proposed me.
 
-![](@attachment/Clipboard_2021-04-04-00-58-35.png)
+![OriginalNotSignedError](https://user-images.githubusercontent.com/37411225/113568696-4e778c00-9611-11eb-94f5-f0d44fea9375.PNG)
 
 So I learned that Microsoft Powershell has execution policies which determine when a script can be run in the system and at what conditions.
 
@@ -10,7 +10,7 @@ So I learned that Microsoft Powershell has execution policies which determine wh
 
 By running the command `Get-ExecutionPolicy -List` you get the policies active on your machine:
 
-![](C:\Users\mdellirocioli\Pictures\Snips\SelfCertificate\MyExecutionPolicies.PNG)
+![MyExecutionPolicies](https://user-images.githubusercontent.com/37411225/113568719-5afbe480-9611-11eb-9830-3f798e78b7e5.PNG)
 
 In my case `All signed` is used on my machine to run scripts only if they are digitally signed, more info on execution policies [here](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.1).
 Indeed if you had the same error you may find that your execution policy does not permit the execution of not signed scripts, either for downloaded and/or your handwritten ones.
@@ -45,7 +45,7 @@ Follow the next steps by typing the commands on your powershell as administrator
     Right click on This PC within the search results and select Properties.
     Under Computer name, domain, and workgroup settings you will find the computer name listed.
 ```
-![](C:\Users\mdellirocioli\Pictures\Snips\SelfCertificate\MachineName.PNG)
+![MachineName](https://user-images.githubusercontent.com/37411225/113568752-736bff00-9611-11eb-85c1-035d96de9302.PNG)
 </details>
 
 ```bash
@@ -70,6 +70,7 @@ Set-AuthenticodeSignature <The script path in your system> $cert
 
 The commands in the powershell should look something like the following:
 
-![](C:\Users\mdellirocioli\Pictures\Snips\SelfCertificate\ValidProcedureOnPowerShellAdmin.PNG)
+![ValidProcedureOnPowerShellAdmin](https://user-images.githubusercontent.com/37411225/113568785-867ecf00-9611-11eb-827a-65bc860c84ea.PNG)
 
-Now you can run your script
+
+Now you should be able to run your script 🙂
