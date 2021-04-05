@@ -74,3 +74,5 @@ The commands in the powershell should look something like the following:
 
 
 Now you should be able to run your script 🙂
+
+Comment below if you feel this guide is not complete or find any problems with it!
